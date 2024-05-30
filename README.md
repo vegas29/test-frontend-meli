@@ -1,4 +1,4 @@
-# Test Frontend Mercadolibre
+# Test Frontend Mercado Libre
 
 ## Autor: Diego Alejandro Perdomo Montealegre
 
