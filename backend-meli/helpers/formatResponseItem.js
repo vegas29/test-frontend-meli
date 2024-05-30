@@ -14,7 +14,7 @@ const formatResponseItem = ({
   category_id,
 }) => {
   return {
-    AUTHOR,
+    author: AUTHOR,
     id,
     title,
     condition,

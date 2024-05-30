@@ -12,7 +12,7 @@ const formatResponseItems = (items, categories) => {
     }
 
   return {
-    AUTHOR,
+    author: AUTHOR,
     categories: categories
       ? formatCategories()
       : [],
