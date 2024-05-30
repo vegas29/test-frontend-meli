@@ -24,7 +24,7 @@ const corsOptions = {
 
 app.use(express.json());
 
-if (process.env.DEV_MODE === 'true') {
+if (process.env.DEV_MODE === 'true' || process.env.DEV_MODE === 'TRUE') {
   app.use(cors(corsOptions));
 }
 

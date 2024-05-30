@@ -1,3 +1,4 @@
+import { AUTHOR } from "../config/constants.js";
 import formatPrice from "./formatPrice.js";
 
 const formatResponseItem = ({
@@ -13,6 +14,7 @@ const formatResponseItem = ({
   category_id,
 }) => {
   return {
+    AUTHOR,
     id,
     title,
     condition,
