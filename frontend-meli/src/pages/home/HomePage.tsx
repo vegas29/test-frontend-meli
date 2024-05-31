@@ -1,13 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
 import SearchNavbar from "../../ui/components/SearchNavbar";
+import StartToSearch from "../../ui/components/StartToSearch";
 import logo from "../../assets/Logo_ML.png";
 
 const HomePage = () => {
   return (
-    <main className="meli-page-home">
-      <SearchNavbar />
-
+    <nav>
       <Helmet>
         <title>Mercado Libre Colombia - Envíos Gratis en el día</title>
         <meta name="description" content="Compre productos con Envío Gratis en el día en Mercado Libre Colombia. Encuentre miles de marcas y productos a precios increíbles." />
@@ -15,7 +14,11 @@ const HomePage = () => {
         <meta property="og:image" content={logo} />
         <meta property="og:description" content="Compre productos con Envío Gratis en el día en Mercado Libre Colombia. Encuentre miles de marcas y productos a precios increíbles." />
       </Helmet>
-    </main>
+      <SearchNavbar />
+      <StartToSearch />
+      {/* <Breadcrumb/>
+      <FlatList/> */}
+    </nav>
   )
 }
 

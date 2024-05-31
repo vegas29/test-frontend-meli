@@ -1,0 +1,15 @@
+@import '../../../styles/main.scss';
+
+$whiteColor: map-get($colors, "white");
+
+.noResults__container {
+    margin: $margin-16 auto;
+    padding: $margin-16;
+    background-color: $whiteColor;
+    max-width: 1200px;
+}
+
+.noResults__title,
+.noResults__text{
+    text-align: center;
+}

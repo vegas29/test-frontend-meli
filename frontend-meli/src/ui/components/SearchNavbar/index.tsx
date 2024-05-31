@@ -14,17 +14,18 @@ export const SearchNavbar = () => {
     const location = useLocation();
     const { addItems } = useItemsStore();
 
-    const { q = '' } = queryString.parse(location.search);
+    const { search = '' } = queryString.parse(location.search);
     const [{ searchText }, handleInputChange] = useForm({
-        searchText: q
+        searchText: search
     });
 
     useMemo( 
         async () => {
-            const result = await getResultsFromSearch(q);
+            const result = await getResultsFromSearch(search);
             await addItems(result);
-        }, [q]
+        }, [search]
     );
+
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -33,7 +34,7 @@ export const SearchNavbar = () => {
             return;
         }
 
-        navigate(`?q=${searchText}`);
+        navigate(`/items?search=${searchText}`);
 
     }
 
@@ -47,7 +48,7 @@ export const SearchNavbar = () => {
                         </a>
                     </div>
                     <div className="search-navbar__container-form">
-                        <form className="search-navbar__form" onSubmit={handleSubmit}>
+                        <form className="search-navbar__form" onSubmit={(e) => handleSubmit(e)}>
                             <input
                                 type="text"
                                 name="searchText"

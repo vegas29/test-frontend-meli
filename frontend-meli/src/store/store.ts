@@ -9,7 +9,6 @@ type ItemState = {
 export const useItemsStore = create<ItemState>((set) => ({
     items: [],
     addItems: (data: Item[]) => {
-        console.log('data', data)
         set(() => ({
             items: data
         }))

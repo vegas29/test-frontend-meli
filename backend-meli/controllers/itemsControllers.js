@@ -4,7 +4,6 @@ import formatResponseItem from "../helpers/formatResponseItem.js";
 
 const getItemByQuery = async (req, res) => {
   const { q } = req.query;
-  console.log('hola me llame', q)
   
   try {
     const response = await axios(`${process.env.API_MELI}/sites/MLA/search?q=${q}`);
@@ -12,7 +11,6 @@ const getItemByQuery = async (req, res) => {
       (filter) => filter.id === "category"
     );
     res.json(formatResponseItems(response.data.results, categories));
-    res.json(categories);
   } catch (error) {
     console.log("Error on getItemByQuery controller", error);
 

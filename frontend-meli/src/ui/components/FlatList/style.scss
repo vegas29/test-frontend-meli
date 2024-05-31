@@ -1,0 +1,24 @@
+@import '../../../styles/main.scss';
+
+$bg-color: map-get($colors, "white");
+
+.flatlist__results{
+    border-radius: $borderRadius;
+    padding: $margin-16;
+    background-color: $bg-color;
+    margin: 0 auto $margin-16 auto;
+    max-width: $container;
+
+    & > .flatlist__results-layout{
+        & > div{
+            & + div{
+                margin-top: $margin-16;
+
+                & > *{
+                    border-top: 2px solid #F7F7F7;
+                    padding-top: $margin-16;
+                }
+            }
+        }
+    }
+}

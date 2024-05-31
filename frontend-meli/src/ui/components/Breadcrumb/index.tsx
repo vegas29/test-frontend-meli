@@ -1,29 +1,35 @@
 import React from 'react';
-
+import { useItemsStore } from '../../../store/store';
 import "./style.scss";
 
-export const Breadcrumb = ({ items = [] }) => {
+const Breadcrumb = () => {
+    
+  const { categories }= useItemsStore(state => state.items);
 
-    const list = items.map( (item, i, a) => {
-        const active = i === a.length - 1;
-        const classes = active ? 'meli-active' : '';
+  if (!categories || categories.length === 0) {
+    return null; // No renderizar nada si no hay categorías
+  }
 
-        return (
-            <li className={classes}>
-                 <a href="/" onClick={e => e.preventDefault()}>
-                    {item}
-                </a>
-            </li>
-        );
-    });
+  const renderCategory = (item, index, array) => {
+    const isActive = index === array.length - 1;
+    const classes = isActive ? 'breadcrumb-active' : '';
 
     return (
-        <section className="meli-breadcrumbs">
-            <ol className="meli-breadcrumbs-nav">
-                {list}
-            </ol>
-        </section>
+      <li key={index} className={classes}>
+        <a href="/" onClick={e => e.preventDefault()}>
+          {item}
+        </a>
+      </li>
     );
-}
+  };
+
+  return (
+    <section className="container__breadcrumb">
+      <ol className="container__breadcrumbs-ol">
+        {categories.map(renderCategory)}
+      </ol>
+    </section>
+  );
+};
 
 export default Breadcrumb;

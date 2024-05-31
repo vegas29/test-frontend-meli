@@ -4,9 +4,9 @@ import { Loader } from '../ui/components/Loader';
 
 export const AppRouter = () => {
 
-    const HomeView = lazy(() => import('../pages/home/HomePage'));
-    const PDPView = lazy(() => import('../pages/pdp/PDPPage'));
-    const PLPView = lazy(() => import('../pages/plp/PLPPage'));
+    const HomeView = lazy(() => import('../pages/Home/HomePage'));
+    const PDPView = lazy(() => import('../pages/PDP/PDPPage'));
+    const PLPView = lazy(() => import('../pages/PLP/PLPPage'));
 
 
     return (

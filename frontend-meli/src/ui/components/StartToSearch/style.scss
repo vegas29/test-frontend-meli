@@ -1,0 +1,15 @@
+@import '../../../styles/main.scss';
+
+$whiteColor: map-get($colors, "white");
+
+.startToSearch__container {
+    margin: $margin-16 auto;
+    padding: $margin-16;
+    background-color: $whiteColor;
+    max-width: 1200px;
+}
+
+.startToSearch__title,
+.startToSearch__text{
+    text-align: center;
+}

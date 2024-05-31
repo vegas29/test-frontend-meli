@@ -1,0 +1,97 @@
+@import '../../../styles/main.scss';
+
+$results-item-image-size: 180px;
+$grayColor: map-get($colors, "dark-gray");
+
+.flatlist__container{
+
+
+    .flatlist__container-grid{
+
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(lg) {
+            display: grid;
+            grid-template-columns: 2fr 7fr 2fr;
+        }
+
+        & > div{
+            padding-left: $margin-16;
+
+            &:nth-child(1){
+                width: auto;
+            }
+            
+            &:nth-child(2){
+                flex: 1;
+            }
+        }
+    }
+
+    img{
+        width: $results-item-image-size * 0.7;
+        height: $results-item-image-size * 0.7;
+        border-radius: $borderRadius;
+
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: end;
+
+        @include breakpoint(sm){
+            width: $results-item-image-size;
+            height: $results-item-image-size;
+        }
+    }
+
+    
+    .flatlist__price-wrapper{
+        margin-top: $margin-16;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .flatlist__item-price{
+        font-size: $fontSize-24;
+        line-height: 1;
+        color: $grayColor;
+    }
+    
+    .flatlist__item-free-shipping{
+        background: url(../../../assets/ic_shipping.png) center center no-repeat;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-left: 12px;
+    }
+
+    .flatlist__item-condition{
+        margin-top: $margin-32;
+        font-size: $fontSize-12;
+        font-weight: 300;
+        color: $grayColor;
+
+        @include breakpoint(sm){
+            margin-right: $margin-32;
+        }
+    }
+    
+    .flatlist__title{
+        margin: $margin-32 0 0 0;
+        font-size: $fontSize-18;
+        font-weight: 400;
+        color: $grayColor;
+
+        a{
+            color: inherit;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
