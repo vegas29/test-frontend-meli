@@ -1,0 +1,93 @@
+@import '../../../styles/main.scss';
+
+$bg-yellow: map-get($colors, "yellow");
+$pad-sm: 10px;
+
+$radius: $borderRadius;
+$font-size-base: $base-fontSize;
+$color-grey-dark: map-get($colors, "gray-dark");
+$color-grey-light: map-get($colors, "gray-light");
+$pad-md: 15px;
+
+$btn-size: 36px;
+$bg-light: map-get($colors, "light");
+$bg-light-hover: darken($bg-light, 10%);
+
+@mixin radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin placeholder-color($color) {
+  &::placeholder {
+    color: $color;
+  }
+}
+
+.search-navbar {
+  background-color: $bg-yellow;
+  padding: $pad-sm 0;
+}
+
+.search-navbar__container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+.search-navbar__grid {
+  display: flex;
+  margin-left: -($margin-32);
+
+  & > *{
+    padding-left: $margin-32;
+    box-sizing: border-box;
+  }
+}
+
+.search-navbar__flex-center {
+  align-items: center;
+}
+
+.search-navbar__container-logo {
+  width: auto;
+}
+
+.search-navbar__form {
+  display: flex;
+}
+
+.search-navbar__container-form {
+  flex: 1;
+}
+
+.search-navbar__input {
+  @include radius($radius);
+  font-size: $font-size-base;
+  border: none;
+  width: 100%;
+  padding: calc($pad-md / 2) $pad-md;
+  color: $color-grey-dark;
+  flex: 1;
+  box-sizing: border-box;
+  @include placeholder-color($color-grey-light);
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.search-navbar__button {
+  padding: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  @include radius($radius);
+  border: none;
+  background: url('../../../assets/ic_Search.png') $bg-light center center no-repeat;
+  width: $btn-size;
+  height: $btn-size;
+
+  &:hover {
+    background-color: $bg-light-hover;
+  }
+}
