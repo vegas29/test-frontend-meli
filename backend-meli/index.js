@@ -1,7 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import tokenRoutes from './routes/tokenRoutes.js';
 import itemsRoutes from './routes/itemsRoutes.js';
 
 const app = express();
@@ -24,12 +23,7 @@ const corsOptions = {
 
 app.use(express.json());
 
-if (process.env.DEV_MODE === 'true') {
-  app.use(cors(corsOptions));
-}
-
-
-app.use('/api/token', tokenRoutes);
+app.use(cors(corsOptions));
 
 app.use('/api/items', itemsRoutes);
 

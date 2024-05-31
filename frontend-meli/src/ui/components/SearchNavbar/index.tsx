@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
+import { useItemsStore } from '../../../store/store';
 import { useForm } from "../../../hooks/useForm";
 import logo from "../../../assets/Logo_ML.png";
+import { getResultsFromSearch } from '../../../helpers/getResultsFromSearch';
 import './style.scss';
 
 
@@ -10,11 +12,19 @@ export const SearchNavbar = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const { addItems } = useItemsStore();
 
     const { q = '' } = queryString.parse(location.search);
-    const [{ searchText }, handleInputChange, reset] = useForm({
+    const [{ searchText }, handleInputChange] = useForm({
         searchText: q
     });
+
+    useMemo( 
+        async () => {
+            const result = await getResultsFromSearch(q);
+            await addItems(result);
+        }, [q]
+    );
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -25,7 +35,6 @@ export const SearchNavbar = () => {
 
         navigate(`?q=${searchText}`);
 
-        reset();
     }
 
     return (

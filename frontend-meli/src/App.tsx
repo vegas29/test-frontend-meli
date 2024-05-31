@@ -3,7 +3,6 @@ import { AppRouter } from './router/AppRouter';
 
 const App = () => {
 
-
   return (
     <BrowserRouter>
       <AppRouter />
