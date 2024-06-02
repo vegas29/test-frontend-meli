@@ -4,15 +4,13 @@ import { Helmet } from 'react-helmet';
 import SearchNavbar from '../../ui/components/SearchNavbar';
 import Breadcrumb from '../../ui/components/Breadcrumb';
 import ItemDetails from '../../ui/components/ItemDetails';
-import { getItemById } from '../../helpers/getItemById';
+import { getItemById } from '../../helpers/';
 import { ItemElement } from '../../types/item';
-
 
 const PDPPage = () => {
 
   const { id } = useParams();
   const [item, setItem] = useState<ItemElement>();
-  
 
   const getItemOnPDP = async (id:string) => {
     const item =  await getItemById(id);
@@ -26,19 +24,19 @@ const PDPPage = () => {
   return (
     <div>
       <Helmet>
-          {item && <title>{item?.title} | Mercado Libre</title>}
-          {item && item?.description && (<meta name="description" content={item?.description.substr(0, 200)} />)}
+        {item && <title>{item?.title} | Mercado Libre</title>}
+        {item && item?.description && (<meta name="description" content={item?.description.substring(0, 200)} />)}
 
-          <meta property="og:type" content="meli-co:product" />
-          {item && item?.title && (<meta property="og:title" content={`${item?.title} | Mercado Libre`} />)}
-          {item && item?.description && (<meta property="og:description" content={item?.description.substr(0, 200)} />)}
-          {item && item?.pictures.secure_url && (<meta property="og:image" content={item?.pictures.secure_url} />)}
-          {item && item?.id && (<meta property="og:url" content={location.href} />)}
-          
-          {item && item?.title && (<meta property="twitter:title" content={`${item?.title} | Mercado Libre`} />)}
-          {item && item?.description && (<meta property="twitter:description" content={item?.description.substr(0, 200)} />)}
-          {item && item?.pictures.secure_url && (<meta property="twitter:image" content={item?.pictures.secure_url} />)}
-          <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="og:type" content="meli-co:product" />
+        {item && item?.title && (<meta property="og:title" content={`${item?.title} | Mercado Libre`} />)}
+        {item && item?.description && (<meta property="og:description" content={item?.description.substring(0, 200)} />)}
+        {item && item?.pictures.secure_url && (<meta property="og:image" content={item?.pictures.secure_url} />)}
+        {item && item?.id && (<meta property="og:url" content={location.href} />)}
+        
+        {item && item?.title && (<meta property="twitter:title" content={`${item?.title} | Mercado Libre`} />)}
+        {item && item?.description && (<meta property="twitter:description" content={item?.description.substring(0, 200)} />)}
+        {item && item?.pictures.secure_url && (<meta property="twitter:image" content={item?.pictures.secure_url} />)}
+        <meta property="twitter:card" content="summary_large_image"/>
       </Helmet>
       <SearchNavbar />
       <Breadcrumb/>

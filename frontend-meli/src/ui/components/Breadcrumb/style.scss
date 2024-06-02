@@ -1,6 +1,7 @@
 @import '../../../styles/main.scss';
 
 $text-color: map-get($colors, "gray-light");
+$dark-gray: map-get($colors, "gray-dark");
 
 .container__breadcrumb {
     max-width: $container;
@@ -45,11 +46,12 @@ $text-color: map-get($colors, "gray-light");
                 margin: 0 calc($margin-16 / 2);
             }
         }
+    }
 
-        &.breadcrumb-active {
-            a {
-                font-weight: 700;
-            }
+    .breadcrumb-active {
+        a {
+            font-weight: 700;
+            color: dark-gray;
         }
     }
 }

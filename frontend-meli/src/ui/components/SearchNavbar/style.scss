@@ -5,8 +5,8 @@ $pad-sm: 10px;
 
 $radius: $borderRadius;
 $font-size-base: $base-fontSize;
-$color-gray-dark: map-get($colors, "gray-dark");
-$color-gray-light: map-get($colors, "gray-light");
+$dark-gray: map-get($colors, "gray-dark");
+$light-gray: map-get($colors, "gray-light");
 $pad-md: 15px;
 
 $btn-size: 36px;
@@ -66,10 +66,10 @@ $bg-light-hover: darken($bg-light, 10%);
   border: none;
   width: 100%;
   padding: calc($pad-md / 2) $pad-md;
-  color: $color-gray-dark;
+  color: $dark-gray;
   flex: 1;
   box-sizing: border-box;
-  @include placeholder-color($color-gray-light);
+  @include placeholder-color($light-gray);
 
   &:focus {
     outline: none;

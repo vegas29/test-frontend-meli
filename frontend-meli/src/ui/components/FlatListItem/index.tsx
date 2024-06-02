@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatPrice } from '../../../helpers/formatPrice';
+import { formatPrice } from '../../../helpers/';
 import { ItemElementObject } from '../../../types/item';
 import "./style.scss";
 

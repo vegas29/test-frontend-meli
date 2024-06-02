@@ -1,9 +1,8 @@
 @import '../../../styles/main.scss';
 
-
-$item-details-image-size: 680px;
-$item-details-color: map-get($colors, "gray-dark");
-$item-details-description-color: map-get($colors, "gray-light");
+$image-size: 680px;
+$dark-gray: map-get($colors, "dark-gray");
+$light-gray: map-get($colors, "gray-light");
 $white-color: map-get($colors, "white");
 $bg-button: map-get($colors, "blue");
 
@@ -18,7 +17,6 @@ $bg-button: map-get($colors, "blue");
         display: flex;
         flex-direction: column;
         margin-top: -$margin-32;
-
         @include breakpoint(lg) {
             display: grid;
             grid-template-columns: 5fr 2fr;
@@ -39,16 +37,14 @@ $bg-button: map-get($colors, "blue");
         @include breakpoint(lg){
             
             &, img{
-                width: $item-details-image-size;
+                width: $image-size;
             }
 
             img{
-                height: $item-details-image-size;
+                height: $image-size;
                 object-fit: contain;
             }
         }
-
-        
     }
 
     .item__container-details{
@@ -56,20 +52,20 @@ $bg-button: map-get($colors, "blue");
 
         h1{
             font-size: $fontSize-24;
-            color: $item-details-color;
+            color: $dark-gray;
             margin: $margin-16 0 $margin-32 0;
         }
 
         .item__conditions{
             font-size: $fontSize-14;
             line-height: 1;
-            color: $item-details-color;
+            color: $dark-gray;
         }
 
         .item__price{
             display: flex;
             font-size: $fontSize-46;
-            color: $item-details-color;
+            color: $dark-gray;
             margin-bottom: $margin-32;
             align-items: center;
     
@@ -98,9 +94,15 @@ $bg-button: map-get($colors, "blue");
     .item__description{
 
         h2 {
-            color: $item-details-description-color;
+            color: $dark-gray;
             font-size: $fontSize-24;
+            font-weight: 400;
         }
 
     }
+
+    .item__paragraph{
+        color: $light-gray;
+    }
+
 }

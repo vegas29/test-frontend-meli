@@ -1,7 +1,7 @@
 @import '../../../styles/main.scss';
 
-$results-item-image-size: 180px;
-$grayColor: map-get($colors, "dark-gray");
+$image-size: 180px;
+$dark-gray: map-get($colors, "dark-gray");
 
 .flatlist__container{
 
@@ -26,8 +26,8 @@ $grayColor: map-get($colors, "dark-gray");
     }
 
     .flatlist__item-picture{
-        width: $results-item-image-size;
-        height: $results-item-image-size;
+        width: $image-size;
+        height: $image-size;
         border-radius: $borderRadius;
 
         margin: 0;
@@ -38,8 +38,8 @@ $grayColor: map-get($colors, "dark-gray");
         align-items: end;
 
         @include breakpoint(sm){
-            width: $results-item-image-size;
-            height: $results-item-image-size;
+            width: $image-size;
+            height: $image-size;
         }
     }
 
@@ -54,7 +54,7 @@ $grayColor: map-get($colors, "dark-gray");
     .flatlist__item-price{
         font-size: $fontSize-24;
         line-height: 1;
-        color: $grayColor;
+        color: $dark-gray;
     }
     
     .flatlist__item-free-shipping{
@@ -69,7 +69,7 @@ $grayColor: map-get($colors, "dark-gray");
         margin-top: $margin-32;
         font-size: $fontSize-12;
         font-weight: 300;
-        color: $grayColor;
+        color: $dark-gray;
 
         @include breakpoint(sm){
             margin-right: $margin-32;
@@ -80,7 +80,7 @@ $grayColor: map-get($colors, "dark-gray");
         margin: $margin-32 0 0 0;
         font-size: $fontSize-18;
         font-weight: 400;
-        color: $grayColor;
+        color: $dark-gray;
 
         a{
             color: inherit;

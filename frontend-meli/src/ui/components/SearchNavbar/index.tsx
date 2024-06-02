@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
 import { useItemsStore } from '../../../store/store';
 import { useForm } from "../../../hooks/useForm";
-import { getResultsFromSearch } from '../../../helpers/getResultsFromSearch';
+import { getResultsFromSearch } from '../../../helpers/';
 import logo from "../../../assets/Logo_ML.png";
 import './style.scss';
 
@@ -12,7 +12,7 @@ export const SearchNavbar = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const { addItems, setLoading } = useItemsStore();
+    const { addItems, setLoading, setCategories } = useItemsStore();
 
     const { search = '' } = queryString.parse(location.search);
     const [{ searchText }, handleInputChange] = useForm({
@@ -22,14 +22,15 @@ export const SearchNavbar = () => {
 
     const getItemsOnPLP = async () => {
         const result = await getResultsFromSearch(search);
-        console.log('result', result)
         addItems(result);
+        if (result?.categories.length > 0) {
+            setCategories(result?.categories);
+        }
         setLoading(true);
     }
 
     useEffect( () => {
         getItemsOnPLP();
-        console.log('me ejcute')
     }, [search]);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
