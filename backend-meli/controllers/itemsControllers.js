@@ -32,7 +32,6 @@ const getItemById = async (req, res) => {
     );
     const { data: responseData } = responseDescription;
     const response = formatResponseItem(data);
-    console.log('data', data)
     response.description = responseData?.plain_text;
     res.json(response);
   } catch (error) {
