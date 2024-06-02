@@ -27,7 +27,6 @@ app.use(cors(corsOptions));
 
 app.use('/api/items', itemsRoutes);
 
-
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });

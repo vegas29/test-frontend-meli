@@ -2,13 +2,40 @@
 
 ## Autor: Diego Alejandro Perdomo Montealegre
 
+> Backend
 
-## Correr el proyecto
+1. Instalar los paquetes de node
 
-> Frontend
+1.1 Ir a la carpeta del frontend
+
+``` cd frontend-meli ```
+
+1.2 Luego
+
+``` npm run install ```
+
+2. Configurar el puerto
+
+El puerto por defecto será el 4000, si no debo se deberá especifar en el .env del backend-meli
 
 ``` npm run dev ```
 
-> Backend
+Asi
+
+```PORT=4000```
+
+> Frontend
+
+1. Instalar los paquetes de node
+
+1.1 Ir a la carpeta del frontend
+
+``` cd frontend-meli ```
+
+1.2 Luego
+
+``` npm run install ```
+
+2. Lanzar la app
 
 ``` npm run dev ```
