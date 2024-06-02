@@ -1,12 +1,14 @@
 @import '../../../styles/main.scss';
 
 $bg-yellow: map-get($colors, "yellow");
-$pad-sm: 10px;
 
 $radius: $borderRadius;
 $font-size-base: $base-fontSize;
+
 $dark-gray: map-get($colors, "gray-dark");
 $light-gray: map-get($colors, "gray-light");
+
+$pad-sm: 10px;
 $pad-md: 15px;
 
 $btn-size: 36px;
@@ -25,7 +27,11 @@ $bg-light-hover: darken($bg-light, 10%);
 
 .search-navbar {
   background-color: $bg-yellow;
-  padding: $pad-sm 0;
+  padding: $pad-sm;
+
+  @include breakpoint(md) {
+    padding: $pad-sm 0;
+  }
 }
 
 .search-navbar__container {
