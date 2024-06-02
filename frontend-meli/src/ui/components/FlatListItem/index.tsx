@@ -16,29 +16,26 @@ export const FlatListItem = ({ item }: ItemElement) => {
 
     return (
         <article className="flatlist__container">
-            <div className="flatlist__container-grid">
-                <div className="flatlist__item-picture">
-                    <Link to={url}>
-                        <img src={item?.picture} alt={title} width="180" height="180" />
-                    </Link>
-                </div>
-
-                <div>
-                    <div className="flatlist__price-wrapper">
-                        <div className="flatlist__item-price">{priceItem}
-                            <span className={freeShippingItem}></span>
-                        </div>
-                    </div>
-                    <h2 className="flatlist__title">
-                        <Link to={url}>{title}</Link>
-                    </h2>
-                </div>
-
-                <div>
-                    <div className="flatlist__item-condition">{conditionItem}</div>
-                </div>
+            <div className="flatlist__item-picture">
+                <Link to={url}>
+                    <img src={item?.thumbnail} alt={title} width="180" height="180" />
+                </Link>
             </div>
 
+            <div>
+                <div className="flatlist__price-wrapper">
+                    <div className="flatlist__item-price">{priceItem}
+                        <span className={freeShippingItem}></span>
+                    </div>
+                </div>
+                <h2 className="flatlist__title">
+                    <Link to={url}>{title}</Link>
+                </h2>
+            </div>
+
+            <div>
+                <div className="flatlist__item-condition">{conditionItem}</div>
+            </div>
         </article>
     )
 }

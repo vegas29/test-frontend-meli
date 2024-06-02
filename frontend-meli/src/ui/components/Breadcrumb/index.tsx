@@ -4,10 +4,10 @@ import "./style.scss";
 
 const Breadcrumb = () => {
     
-  const { categories }= useItemsStore(state => state.items);
+  const dataCategories= useItemsStore(state => state.items);
 
-  if (!categories || categories.length === 0) {
-    return null; // No renderizar nada si no hay categorías
+  if (!dataCategories?.categories || dataCategories?.categories.length === 0) {
+    return null;
   }
 
   const renderCategory = (item, index, array) => {
@@ -26,7 +26,7 @@ const Breadcrumb = () => {
   return (
     <section className="container__breadcrumb">
       <ol className="container__breadcrumbs-ol">
-        {categories.map(renderCategory)}
+        {dataCategories?.categories.map(renderCategory)}
       </ol>
     </section>
   );

@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import SearchNavbar from '../../ui/components/SearchNavbar';
 import Breadcrumb from '../../ui/components/Breadcrumb';
 import FlatList from '../../ui/components/FlatList';
+
 const PLPPage = () => {
 
   const location = useLocation();

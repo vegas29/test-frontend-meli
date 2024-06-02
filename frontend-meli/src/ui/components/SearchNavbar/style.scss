@@ -5,8 +5,8 @@ $pad-sm: 10px;
 
 $radius: $borderRadius;
 $font-size-base: $base-fontSize;
-$color-grey-dark: map-get($colors, "gray-dark");
-$color-grey-light: map-get($colors, "gray-light");
+$color-gray-dark: map-get($colors, "gray-dark");
+$color-gray-light: map-get($colors, "gray-light");
 $pad-md: 15px;
 
 $btn-size: 36px;
@@ -31,7 +31,7 @@ $bg-light-hover: darken($bg-light, 10%);
 .search-navbar__container {
   max-width: $container-width;
   margin: 0 auto;
-  padding: 0 $container-padding;
+  padding: 0;
 }
 
 .search-navbar__grid {
@@ -66,10 +66,10 @@ $bg-light-hover: darken($bg-light, 10%);
   border: none;
   width: 100%;
   padding: calc($pad-md / 2) $pad-md;
-  color: $color-grey-dark;
+  color: $color-gray-dark;
   flex: 1;
   box-sizing: border-box;
-  @include placeholder-color($color-grey-light);
+  @include placeholder-color($color-gray-light);
 
   &:focus {
     outline: none;

@@ -1,0 +1,21 @@
+@import '../../../styles/main.scss';
+
+$white-color: map-get($colors, "white");
+$grayDark-color: map-get($colors, "gray-dark");
+
+.loader__container{
+    margin: $margin-16 auto;
+    padding: $margin-16;
+    background-color: $white-color;
+    max-width: 1200px;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader__text{
+        text-align: center;
+        font-size: $fontSize-14;
+        color: $grayDark-color;
+    }
+}

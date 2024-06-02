@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from "react-router-dom";
-import { Loader } from '../ui/components/Loader';
+import { Loader } from '../ui/components/Loader/Loader';
 
 export const AppRouter = () => {
 

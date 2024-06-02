@@ -7,10 +7,11 @@ const formatResponseItem = ({
   currency_id,
   price,
   thumbnail,
+  pictures,
   condition,
   shipping,
   address,
-  sold_quantity,
+  initial_quantity,
   category_id,
 }) => {
   return {
@@ -23,10 +24,11 @@ const formatResponseItem = ({
       amount: price,
       decimals: formatPrice(price),
     },
-    picture: thumbnail,
+    thumbnail,
+    pictures: pictures ? pictures[0] : '',
     free_shipping: shipping.free_shipping,
     address: address ? address.state_name : null,
-    sold_quantity,
+    initial_quantity,
     category_id,
   };
 };

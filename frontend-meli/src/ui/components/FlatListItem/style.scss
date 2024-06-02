@@ -5,31 +5,27 @@ $grayColor: map-get($colors, "dark-gray");
 
 .flatlist__container{
 
+    display: flex;
+    flex-direction: column;
 
-    .flatlist__container-grid{
+    @include breakpoint(lg) {
+        display: grid;
+        grid-template-columns: 2fr 7fr 2fr;
+    }
 
-        display: flex;
-        flex-direction: column;
+    & > div{
+        padding-left: $margin-16;
 
-        @include breakpoint(lg) {
-            display: grid;
-            grid-template-columns: 2fr 7fr 2fr;
+        &:nth-child(1){
+            width: auto;
         }
-
-        & > div{
-            padding-left: $margin-16;
-
-            &:nth-child(1){
-                width: auto;
-            }
-            
-            &:nth-child(2){
-                flex: 1;
-            }
+        
+        &:nth-child(2){
+            flex: 1;
         }
     }
 
-    img{
+    .flatlist__item-picture{
         width: $results-item-image-size * 0.7;
         height: $results-item-image-size * 0.7;
         border-radius: $borderRadius;

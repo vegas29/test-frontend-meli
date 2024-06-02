@@ -7,9 +7,7 @@ export const getResultsFromSearch = async (q: string | (string | null)[] | null)
         return data;
 
     } catch (error) {
-        
         console.log('error in getResultsFromSearch', error);
-
     }
 
 }

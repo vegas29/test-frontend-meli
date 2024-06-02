@@ -10,8 +10,11 @@ $bg-color: map-get($colors, "white");
     max-width: $container;
 
     & > .flatlist__results-layout{
+
         & > div{
+
             & + div{
+                
                 margin-top: $margin-16;
 
                 & > *{
@@ -20,5 +23,10 @@ $bg-color: map-get($colors, "white");
                 }
             }
         }
+    }
+
+    .flatlist__results-text {
+        text-align: center;
+        font-size: $fontSize-24;
     }
 }
