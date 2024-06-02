@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../../helpers/formatPrice';
-import { ItemElement } from '../../../types/item';
+import { ItemElementObject } from '../../../types/item';
 import "./style.scss";
 
-export const FlatListItem = ({ item }: ItemElement) => {
+export const FlatListItem = ({item}: ItemElementObject) => {
 
     const { id, price: { amount }, free_shipping, condition, title } = item;
 

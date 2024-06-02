@@ -1,15 +1,13 @@
 import React from 'react';
-
+import { useItemsStore } from '../../../store/store';
 import { formatPrice } from '../../../helpers/formatPrice';
 import { Loader } from '../Loader/Loader';
-import { useItemsStore } from '../../../store/store';
+import { DataIsLoading, ItemElementObject } from '../../../types/item';
 import './style.scss';
 
-export const ItemDetails = ({item}) => {
+export const ItemDetails = ({item}: ItemElementObject) => {
 
-    const { isLoading } = useItemsStore(state => state.isLoading);
-
-    if(!item) return (<div></div>);
+    const dataIsLoading:DataIsLoading | boolean = useItemsStore(state => state.isLoading);
 
     const symbol = "$";
     const finalPrice = formatPrice(item?.price?.amount, symbol);
@@ -17,7 +15,7 @@ export const ItemDetails = ({item}) => {
 
     return (
 
-        isLoading ? (
+        dataIsLoading?.isLoading ? (
             <Loader/>
         ) : (
             <section className="item__container">
@@ -31,7 +29,7 @@ export const ItemDetails = ({item}) => {
 
                         <div className="item__description">
                             <h2>Descripción del producto</h2>
-                            <div dangerouslySetInnerHTML={{ __html: item?.description.replace(/(\r\n|\n|\r)/gm, "<br>") }} />
+                            <div dangerouslySetInnerHTML={{ __html: item?.description!.replace(/(\r\n|\n|\r)/gm, "<br>") }} />
                         </div>
                     </div>
 

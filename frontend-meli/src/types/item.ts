@@ -15,10 +15,16 @@ export interface ItemElement {
     title:         string;
     condition:     string;
     price:         Price;
-    picture:       string;
+    pictures:       PictureElement;
     free_shipping: boolean;
     address:       null;
     category_id:   string;
+    thumbnail?:     string;
+    description?:  string;
+    initial_quantity?: number;
+}
+export interface PictureElement {
+    secure_url?:    string;
 }
 
 export interface Price {
@@ -26,3 +32,12 @@ export interface Price {
     amount:   number;
     decimals: number;
 }
+
+export interface DataIsLoading {
+    isLoading: boolean;
+}
+
+export interface ItemElementObject {
+    item: ItemElement;
+}
+

@@ -16,8 +16,6 @@ const HomePage = () => {
       </Helmet>
       <SearchNavbar />
       <StartToSearch />
-      {/* <Breadcrumb/>
-      <FlatList/> */}
     </nav>
   )
 }

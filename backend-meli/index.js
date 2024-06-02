@@ -9,7 +9,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 
-const enableDomains = [process.env.FRONTEND_URL];
+const enableDomains = [process.env.FRONTEND_URL, 'http://localhost:4000'];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -23,7 +23,7 @@ const corsOptions = {
 
 app.use(express.json());
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use('/api/items', itemsRoutes);
 

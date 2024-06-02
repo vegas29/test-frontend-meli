@@ -1,6 +1,7 @@
 @import '../../../styles/main.scss';
 
 $bg-color: map-get($colors, "white");
+$border-color: map-get($colors, "gray-border" );
 
 .flatlist__results{
     border-radius: $borderRadius;
@@ -18,7 +19,7 @@ $bg-color: map-get($colors, "white");
                 margin-top: $margin-16;
 
                 & > *{
-                    border-top: 2px solid #F7F7F7;
+                    border-top: 2px solid $border-color;
                     padding-top: $margin-16;
                 }
             }

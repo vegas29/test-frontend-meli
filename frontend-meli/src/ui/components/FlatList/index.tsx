@@ -1,14 +1,14 @@
 import React from 'react';
-import FlatListItem from '../FlatListItem';
 import { useItemsStore } from '../../../store/store';
-import { ItemElement } from '../../../types/item';
-import './style.scss';
+import FlatListItem from '../FlatListItem';
+import { DataIsLoading, Item, ItemElement } from '../../../types/item';
 import { Loader } from '../Loader/Loader';
+import './style.scss';
 
 export const FlatList = () => {
 
-    const dataItems = useItemsStore(state => state?.items);
-    const dataIsLoading= useItemsStore(state => state?.isLoading);
+    const dataItems:Item = useItemsStore(state => state?.items);
+    const dataIsLoading:DataIsLoading | boolean = useItemsStore(state => state?.isLoading);
 
     const list = dataItems?.items?.map((item: ItemElement) => {
         return (

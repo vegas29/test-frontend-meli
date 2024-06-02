@@ -5,13 +5,13 @@ import SearchNavbar from '../../ui/components/SearchNavbar';
 import Breadcrumb from '../../ui/components/Breadcrumb';
 import ItemDetails from '../../ui/components/ItemDetails';
 import { getItemById } from '../../helpers/getItemById';
-import { Item } from '../../types/item';
+import { ItemElement } from '../../types/item';
 
 
 const PDPPage = () => {
 
   const { id } = useParams();
-  const [item, setItem] = useState<Item>();
+  const [item, setItem] = useState<ItemElement>();
   
 
   const getItemOnPDP = async (id:string) => {
@@ -32,12 +32,12 @@ const PDPPage = () => {
           <meta property="og:type" content="meli-co:product" />
           {item && item?.title && (<meta property="og:title" content={`${item?.title} | Mercado Libre`} />)}
           {item && item?.description && (<meta property="og:description" content={item?.description.substr(0, 200)} />)}
-          {item && item?.picture && (<meta property="og:image" content={item?.picture} />)}
+          {item && item?.pictures.secure_url && (<meta property="og:image" content={item?.pictures.secure_url} />)}
           {item && item?.id && (<meta property="og:url" content={location.href} />)}
           
           {item && item?.title && (<meta property="twitter:title" content={`${item?.title} | Mercado Libre`} />)}
           {item && item?.description && (<meta property="twitter:description" content={item?.description.substr(0, 200)} />)}
-          {item && item?.picture && (<meta property="twitter:image" content={item?.picture} />)}
+          {item && item?.pictures.secure_url && (<meta property="twitter:image" content={item?.pictures.secure_url} />)}
           <meta property="twitter:card" content="summary_large_image"/>
       </Helmet>
       <SearchNavbar />

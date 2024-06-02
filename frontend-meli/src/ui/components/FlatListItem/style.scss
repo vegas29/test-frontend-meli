@@ -26,8 +26,8 @@ $grayColor: map-get($colors, "dark-gray");
     }
 
     .flatlist__item-picture{
-        width: $results-item-image-size * 0.7;
-        height: $results-item-image-size * 0.7;
+        width: $results-item-image-size;
+        height: $results-item-image-size;
         border-radius: $borderRadius;
 
         margin: 0;
