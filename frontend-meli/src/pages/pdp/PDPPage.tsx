@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import SearchNavbar from '../../ui/components/SearchNavbar';
 import Breadcrumb from '../../ui/components/Breadcrumb';
 import ItemDetails from '../../ui/components/ItemDetails';
-import { useParams } from 'react-router-dom';
 import { getItemById } from '../../helpers/getItemById';
+import { Item } from '../../types/item';
 
 
 const PDPPage = () => {
 
   const { id } = useParams();
-  const [item, setItem] = useState();
+  const [item, setItem] = useState<Item>();
   
 
   const getItemOnPDP = async (id:string) => {
@@ -22,23 +23,22 @@ const PDPPage = () => {
     getItemOnPDP(id!);
   }, [id]);
 
-
   return (
     <div>
       <Helmet>
-          {/* {data && <title>{data.title} | Mercado libre</title>}
-          {data && data.description && (<meta name="description" content={data.description.substr(0, 200)} />)}
+          {item && <title>{item?.title} | Mercado Libre</title>}
+          {item && item?.description && (<meta name="description" content={item?.description.substr(0, 200)} />)}
 
-          <meta property="og:type" content="meli-uy:product" />
-          {data && data.title && (<meta property="og:title" content={`${data.title} | Mercado libre`} />)}
-          {data && data.description && (<meta property="og:description" content={data.description.substr(0, 200)} />)}
-          {data && data.picture && (<meta property="og:image" content={data.picture} />)}
-          {data && data.id && (<meta property="og:url" content={location.href} />)}
+          <meta property="og:type" content="meli-co:product" />
+          {item && item?.title && (<meta property="og:title" content={`${item?.title} | Mercado Libre`} />)}
+          {item && item?.description && (<meta property="og:description" content={item?.description.substr(0, 200)} />)}
+          {item && item?.picture && (<meta property="og:image" content={item?.picture} />)}
+          {item && item?.id && (<meta property="og:url" content={location.href} />)}
           
-          {data && data.title && (<meta property="twitter:title" content={`${data.title} | Mercado libre`} />)}
-          {data && data.description && (<meta property="twitter:description" content={data.description.substr(0, 200)} />)}
-          {data && data.picture && (<meta property="twitter:image" content={data.picture} />)}
-          <meta property="twitter:card" content="summary_large_image"/> */}
+          {item && item?.title && (<meta property="twitter:title" content={`${item?.title} | Mercado Libre`} />)}
+          {item && item?.description && (<meta property="twitter:description" content={item?.description.substr(0, 200)} />)}
+          {item && item?.picture && (<meta property="twitter:image" content={item?.picture} />)}
+          <meta property="twitter:card" content="summary_large_image"/>
       </Helmet>
       <SearchNavbar />
       <Breadcrumb/>
