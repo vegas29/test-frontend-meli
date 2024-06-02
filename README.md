@@ -18,11 +18,13 @@
 
 El puerto por defecto será el 4000, si no debo se deberá especifar en el .env del backend-meli
 
-``` npm run dev ```
-
 Asi
 
 ```PORT=4000```
+
+3. Lanzar la app
+
+``` npm run dev ```
 
 > Frontend
 
