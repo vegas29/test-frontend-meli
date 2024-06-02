@@ -17,7 +17,6 @@ const Breadcrumb = () => {
     }
   }, [dataCategories?.categories]);
 
-  console.log('categories', dataCategories)
 
   const renderCategory = (item:string, index:number, array:string[]) => {
     const isActive = index === array.length - 1;
