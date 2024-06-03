@@ -6,3 +6,4 @@ El frontend está construido con las siguientes herramientas:
 2. Typescript
 3. Vite
 4. Sass
+5. Zustand
