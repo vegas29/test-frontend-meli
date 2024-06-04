@@ -22,9 +22,23 @@ Asi
 
 ```PORT=4000```
 
+Si se tiene ocupado ese puerto, por favor, modificar la variables del backend.
+
+El archivo a manipular es el .env en backend meli
+
+.env file
+
+```
+FRONTEND_URL=http://localhost:5173
+JWT_SECRET=nissanskyline
+API_MELI=https://api.mercadolibre.com
+PORT=4000
+```
+
 3. Lanzar la app
 
 ``` npm run dev ```
+
 
 > Frontend
 
@@ -44,10 +58,17 @@ Asi
 
 Nota: Por defecto el frontend corre en el puerto 5173
 
-Si se tiene ocupado ese puerto, vite lanzará la app en otro puerto habilitado, si es así. Por favor, modificar la variables del frontend en el backend ya que contiene CORS.
+Si se tiene ocupado ese puerto, vite lanzará la app en otro puerto habilitado. Si es así por favor, modificar la variables del frontend en el backend ya que contiene CORS.
 
 El archivo a manipular es el .env en backend meli
 
-![image](https://github.com/vegas29/test-frontend-meli/assets/39704797/e1fde9ce-e1cb-4b11-8ad0-fe4915d76d91)
+.env file
+
+```
+FRONTEND_URL=http://localhost:5173
+JWT_SECRET=nissanskyline
+API_MELI=https://api.mercadolibre.com
+PORT=4000
+```
 
 
