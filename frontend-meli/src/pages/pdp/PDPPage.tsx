@@ -40,7 +40,7 @@ const PDPPage = () => {
       </Helmet>
       <SearchNavbar />
       <Breadcrumb/>
-      <ItemDetails item={item}/>
+      <ItemDetails item={item!}/>
     </div>
   )
 }
